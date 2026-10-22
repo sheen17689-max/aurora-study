@@ -81,7 +81,6 @@ aurora-study/
 ├── 学习路线.md
 ├── 知识点/                     深度学习笔记
 ├── agent/                      Agent 学习知识库
-├── code-practice/              学习练习（部分练习另需 PyTorch 等依赖）
 ├── 日记/                       本地运行时生成
 └── 简报/                       本地运行时生成
 ```
