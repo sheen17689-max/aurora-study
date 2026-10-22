@@ -1,0 +1,118 @@
+/* 深度学习研学工作台 - 现代化设计系统 */
+@import 'katex/dist/katex.min.css';
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, Monaco, "Courier New", monospace;
+  --font-math: "KaTeX_Math", "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+
+  /* 浅色主题 Tokens */
+  --bg-app: #fafafa;
+  --bg-card: #ffffff;
+  --bg-subtle: #f4f4f5;
+  --border-card: #e4e4e7;
+  --border-subtle: #d4d4d8;
+  --text-main: #18181b;
+  --text-sub: #71717a;
+  --text-muted: #a1a1aa;
+
+  --accent-primary: #4f46e5;
+  --accent-light: #eef2ff;
+  --accent-hover: #4338ca;
+
+  /* 掌握度语义色 */
+  --lv-unlearned: #94a3b8;
+  --lv-touched: #d97706;
+  --lv-understood: #2563eb;
+  --lv-mastered: #059669;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+}
+
+/* 深色主题 Tokens */
+[data-theme="dark"] {
+  --bg-app: #090d16;
+  --bg-card: #111827;
+  --bg-subtle: #1f2937;
+  --border-card: #374151;
+  --border-subtle: #4b5563;
+  --text-main: #f9fafb;
+  --text-sub: #cbd5e1;
+  --text-muted: #6b7280;
+
+  --accent-primary: #6366f1;
+  --accent-light: rgba(99, 102, 241, 0.16);
+  --accent-hover: #818cf8;
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 30px rgba(0, 0, 0, 0.7);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* 基础通用类 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .15s ease;
+  user-select: none;
+}
+.btn-primary { background: var(--accent-primary); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-outline {
+  background: var(--bg-card);
+  border-color: var(--border-card);
+  color: var(--text-sub);
+}
+.btn-outline:hover { background: var(--bg-subtle); border-color: var(--border-subtle); color: var(--text-main); }
+
+/* 3D 翻转卡片核心动画 */
+.flip-card-container { perspective: 1000px; }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card-inner.flipped { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+}
+.flip-card-back { transform: rotateY(180deg); }

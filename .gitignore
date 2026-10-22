@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Node / Vite
+node_modules/
+dashboard/dist/
+*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and env
+*.log
+*.pid
+.vite_pid
+.env
+.env.*
+
+# Local backups
+*.backup.py
+
+# Local secrets
+lingpai.txt
+agent_config.json
+
+# Personal study records
+**/日记/*.md
+**/简报/*.md
+
+# Credentials and local state
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite*
+*.bak
+
